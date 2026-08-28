@@ -38,22 +38,55 @@ function App() {
 
       {/* About */}
       <section id="about" className="px-8 py-20 border-t">
-        <h2 className="text-4xl font-bold mb-6">About Me</h2>
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl font-bold mb-6">About Me</h2>
 
-        <p className="max-w-3xl text-lg">
-          I'm a Computer Science graduate with experience in software
-          development, web development, and digital tools through academic
-          projects and professional experience.
-        </p>
+          <p className="max-w-3xl text-lg">
+            I'm a Computer Science graduate with experience in software
+            development, web development, and digital tools through academic
+            projects and professional experience.
+          </p>
+
+          <p className="max-w-3xl text-lg mt-6">
+            I enjoy building practical applications and exploring how technology
+            can be used to solve problems. My experience includes working with
+            web technologies, programming languages, databases, and digital
+            tools across academic and professional projects.
+          </p>
+        </div>
       </section>
 
       {/* Skills */}
       <section id="skills" className="px-8 py-20 border-t">
-        <h2 className="text-4xl font-bold mb-6">Skills</h2>
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12">Skills</h2>
 
-        <p className="text-lg">
-          ReactJS • Tailwind CSS • Python • C# • Java • MySQL
-        </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="border rounded-lg p-4 text-center hover:-translate-y-1 transition-transform">
+              ReactJS
+            </div>
+
+            <div className="border rounded-lg p-4 text-center hover:-translate-y-1 transition-transform">
+              Tailwind CSS
+            </div>
+
+            <div className="border rounded-lg p-4 text-center hover:-translate-y-1 transition-transform">
+              Python
+            </div>
+
+            <div className="border rounded-lg p-4 text-center hover:-translate-y-1 transition-transform">
+              C#
+            </div>
+
+            <div className="border rounded-lg p-4 text-center hover:-translate-y-1 transition-transform">
+              Java
+            </div>
+
+            <div className="border rounded-lg p-4 text-center hover:-translate-y-1 transition-transform">
+              MySQL
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Projects */}
@@ -152,9 +185,32 @@ function App() {
 
       {/* Contact */}
       <section id="contact" className="px-8 py-20 border-t">
-        <h2 className="text-4xl font-bold mb-6">Contact</h2>
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl font-bold mb-6">Contact</h2>
 
-        <p className="text-lg">Let's connect.</p>
+          <p className="max-w-3xl text-lg mb-8">
+            Interested in working together or just want to connect? Feel free to
+            reach out.
+          </p>
+
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="mailto:neilagnes.pimentel@gmail.com"
+              className="border rounded-lg px-6 py-3 hover:-translate-y-1 transition-transform"
+            >
+              Email Me
+            </a>
+
+            <a
+              href="https://github.com/qneilxy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border rounded-lg px-6 py-3 hover:-translate-y-1 transition-transform"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
       </section>
     </div>
   );
