@@ -19,6 +19,7 @@ function App() {
 
   const [openSkill, setOpenSkill] = useState(null);
   const skillsRef = useRef(null);
+  const [showMoreProjects, setShowMoreProjects] = useState(false);
 
   useEffect(() => {
     const section = skillsRef.current;
@@ -599,21 +600,31 @@ function App() {
             Things I've built along the way.
           </h2>
 
-          {/* Project Cards */}
+          {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Project 01 */}
+            {/* ==================== PROJECT 01 ==================== */}
             <article
               className="h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
               style={{ backgroundColor: "#FFF9F2" }}
             >
               <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-full">
+                {/* Project Information */}
                 <div className="flex flex-col min-w-0">
-                  <p
-                    className="font-body font-medium text-m tracking-[0.2em] mb-10"
-                    style={{ color: "var(--color-secondary)" }}
-                  >
-                    01
-                  </p>
+                  <div className="flex items-center justify-between mb-10">
+                    <p
+                      className="font-body font-medium text-m tracking-[0.2em]"
+                      style={{ color: "var(--color-secondary)" }}
+                    >
+                      01
+                    </p>
+
+                    <p
+                      className="font-body text-sm tracking-[0.15em]"
+                      style={{ color: "var(--color-secondary)" }}
+                    >
+                      Jun 2023
+                    </p>
+                  </div>
 
                   <h3
                     className="font-accent text-3xl md:text-4xl uppercase mb-5"
@@ -638,165 +649,47 @@ function App() {
                   </p>
                 </div>
 
+                {/* Personal Remark */}
                 <div
                   className="lg:border-l lg:pl-8 flex items-start"
                   style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
                 >
                   <p
-                    className="font-body italic text-sm leading-relaxed"
+                    className="font-body italic text-sm md:text-base leading-relaxed"
                     style={{ color: "var(--color-forest)" }}
                   >
-                    A project I did with my classmate Andrea during our first
-                    year. <br />
+                    One of my first web projects, made with Andrea. <br />
                     <br />
-                    It was made for her since she makes crochet, and we came up
-                    with HANDeng from “handcrafted” + Andeng.
+                    We built it together from the frontend to the basic shopping
+                    features.
                   </p>
                 </div>
               </div>
             </article>
 
-            {/* Project 02 */}
+            {/* ==================== PROJECT 02 ==================== */}
             <article
               className="h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
               style={{ backgroundColor: "#FFF9F2" }}
             >
               <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-full">
+                {/* Project Information */}
                 <div className="flex flex-col min-w-0">
-                  <p
-                    className="font-body font-medium text-m tracking-[0.2em] mb-10"
-                    style={{ color: "var(--color-secondary)" }}
-                  >
-                    02
-                  </p>
+                  <div className="flex items-center justify-between mb-10">
+                    <p
+                      className="font-body font-medium text-m tracking-[0.2em]"
+                      style={{ color: "var(--color-secondary)" }}
+                    >
+                      02
+                    </p>
 
-                  <h3
-                    className="font-accent text-3xl md:text-4xl uppercase mb-5"
-                    style={{ color: "var(--color-forest)" }}
-                  >
-                    GluttonyAndGreed
-                  </h3>
-
-                  <p
-                    className="text-base leading-relaxed"
-                    style={{ color: "var(--color-secondary)" }}
-                  >
-                    A basic 2D platformer game developed with Godot, built
-                    around survival, power, and strategic decision-making.
-                  </p>
-
-                  <p
-                    className="font-body italic text-sm md:text-base mt-auto"
-                    style={{ color: "var(--color-forest)" }}
-                  >
-                    Godot
-                  </p>
-                </div>
-
-                <div
-                  className="lg:border-l lg:pl-8 flex flex-col"
-                  style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
-                >
-                  <p
-                    className="font-body italic text-sm leading-relaxed"
-                    style={{ color: "var(--color-forest)" }}
-                  >
-                    This was from my 3rd year. A simple game that I made for a
-                    game jam, I just made the mechanics complicated LOL.
-                  </p>
-
-                  <p
-                    className="font-body italic text-sm leading-relaxed mt-5"
-                    style={{ color: "var(--color-forest)" }}
-                  >
-                    Luckily, I was able to upload it because it was a must. This
-                    one survived!
-                  </p>
-
-                  <a
-                    href="https://qneilxy.itch.io/gluttony-and-greed"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-body text-sm mt-auto transition-opacity duration-300 hover:opacity-60"
-                    style={{ color: "var(--color-forest)" }}
-                  >
-                    View on itch.io ↗
-                  </a>
-                </div>
-              </div>
-            </article>
-
-            {/* Project 03 */}
-            <article
-              className="h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
-              style={{ backgroundColor: "#FFF9F2" }}
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-full">
-                <div className="flex flex-col min-w-0">
-                  <p
-                    className="font-body font-medium text-m tracking-[0.2em] mb-10"
-                    style={{ color: "var(--color-secondary)" }}
-                  >
-                    03
-                  </p>
-
-                  <h3
-                    className="font-accent text-3xl md:text-4xl uppercase mb-5"
-                    style={{ color: "var(--color-forest)" }}
-                  >
-                    The Remnants of Isa
-                  </h3>
-
-                  <p
-                    className="text-base leading-relaxed"
-                    style={{ color: "var(--color-secondary)" }}
-                  >
-                    A top-down narrative exploration game about Isa, a woman
-                    with early-onset Alzheimer's disease. Returning to her old
-                    home, she explores familiar spaces and objects while trying
-                    to preserve fragments of memories.
-                  </p>
-
-                  <p
-                    className="font-body italic text-sm md:text-base mt-auto"
-                    style={{ color: "var(--color-forest)" }}
-                  >
-                    Godot
-                  </p>
-                </div>
-
-                <div
-                  className="lg:border-l lg:pl-8 flex items-start"
-                  style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
-                >
-                  <p
-                    className="font-body italic text-sm leading-relaxed"
-                    style={{ color: "var(--color-forest)" }}
-                  >
-                    Sadly, I wasn't able to upload this to itch.io before the
-                    file got corrupted. <br />
-                    <br />
-                    Still, I'm really proud of this one. It may not be
-                    everyone's cup of tea, but it's definitely the kind of game
-                    that feels like me.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            {/* Project 04 */}
-            <article
-              className="h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
-              style={{ backgroundColor: "#FFF9F2" }}
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-full">
-                <div className="flex flex-col min-w-0">
-                  <p
-                    className="font-body font-medium text-m tracking-[0.2em] mb-10"
-                    style={{ color: "var(--color-secondary)" }}
-                  >
-                    04
-                  </p>
+                    <p
+                      className="font-body text-sm tracking-[0.15em]"
+                      style={{ color: "var(--color-secondary)" }}
+                    >
+                      Feb 2024
+                    </p>
+                  </div>
 
                   <h3
                     className="font-accent text-3xl md:text-4xl uppercase mb-5"
@@ -809,9 +702,8 @@ function App() {
                     className="text-base leading-relaxed"
                     style={{ color: "var(--color-secondary)" }}
                   >
-                    A desktop-based management system developed as a group
-                    project, featuring user management, session monitoring, and
-                    transaction recording.
+                    A desktop-based management system, featuring user
+                    management, session monitoring, and transaction recording.
                   </p>
 
                   <p
@@ -822,101 +714,574 @@ function App() {
                   </p>
                 </div>
 
+                {/* Personal Remark */}
                 <div
                   className="lg:border-l lg:pl-8 flex items-start"
                   style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
                 >
                   <p
-                    className="font-body italic text-sm leading-relaxed"
+                    className="font-body italic text-sm md:text-base leading-relaxed"
                     style={{ color: "var(--color-forest)" }}
                   >
-                    Another academic project we did with classmates. I was
-                    mainly on the frontend side of this one, so it wasn't as
-                    fancy as it could be, but it was still a fun experience.
-                    <br />
-                    <br />
-                    Unfortunately, I don't have a copy of this either. Huhu.
+                    Another group academic project I worked on. <br />
+                    <br />I was mostly on the frontend side of things, helping
+                    shape how the system looked and how users interacted with
+                    it.
                   </p>
                 </div>
               </div>
             </article>
 
-            {/* Project 05 — In Progress */}
+            {/* ==================== PROJECT 03 ==================== */}
             <article
-              className="md:col-span-2 p-8 md:p-10 min-h-[360px] transition-transform duration-500 hover:-translate-y-1"
+              className="h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
               style={{ backgroundColor: "#FFF9F2" }}
             >
-              <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 h-full">
-                {/* In Progress */}
-                <div className="flex flex-col">
-                  <p
-                    className="font-body font-medium text-m tracking-[0.2em] mb-10"
-                    style={{ color: "var(--color-secondary)" }}
-                  >
-                    05
-                  </p>
+              <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-full">
+                {/* Project Information */}
+                <div className="flex flex-col min-w-0">
+                  <div className="flex items-center justify-between mb-10">
+                    <p
+                      className="font-body font-medium text-m tracking-[0.2em]"
+                      style={{ color: "var(--color-secondary)" }}
+                    >
+                      03
+                    </p>
+
+                    <p
+                      className="font-body text-sm tracking-[0.15em]"
+                      style={{ color: "var(--color-secondary)" }}
+                    >
+                      Apr 2025
+                    </p>
+                  </div>
 
                   <h3
-                    className="font-accent text-4xl md:text-5xl lg:text-6xl uppercase mb-4"
+                    className="font-accent text-3xl md:text-4xl uppercase mb-5"
                     style={{ color: "var(--color-forest)" }}
                   >
-                    In Progress
+                    GluttonyAndGreed
                   </h3>
 
                   <p
-                    className="font-display italic text-2xl md:text-3xl leading-relaxed mb-6"
-                    style={{ color: "var(--color-forest)" }}
-                  >
-                    More to come.
-                  </p>
-
-                  <p
-                    className="text-base md:text-lg leading-relaxed max-w-xl"
+                    className="text-base leading-relaxed"
                     style={{ color: "var(--color-secondary)" }}
                   >
-                    Still building, still learning, still figuring out what
-                    deserves a spot here. Hopefully, this list gets a little
-                    longer soon.
+                    A 2D platformer game developed with Godot, built around a
+                    simple mechanic that I somehow managed to make more
+                    complicated than it needed to be.
                   </p>
+
+                  <div className="mt-auto flex items-center justify-between gap-4">
+                    <p
+                      className="font-body italic text-sm md:text-base"
+                      style={{ color: "var(--color-forest)" }}
+                    >
+                      Godot
+                    </p>
+
+                    <a
+                      href="https://qneilxy.itch.io/gluttony-and-greed"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-body text-sm transition-opacity duration-300 hover:opacity-60"
+                      style={{ color: "var(--color-forest)" }}
+                    >
+                      View on itch.io ↗
+                    </a>
+                  </div>
                 </div>
 
-                {/* Contact CTA */}
+                {/* Personal Remark */}
                 <div
-                  className="lg:border-l lg:pl-12 flex flex-col justify-end"
+                  className="lg:border-l lg:pl-8 flex items-start"
                   style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
                 >
                   <p
-                    className="font-accent text-xl md:text-2xl uppercase tracking-[0.18em] mb-5"
+                    className="font-body italic text-sm md:text-base leading-relaxed"
                     style={{ color: "var(--color-forest)" }}
                   >
-                    Want to work with me?
+                    Learning Godot was a little intimidating at first, but
+                    making my first game was honestly a lot of fun. <br />A
+                    pretty basic platformer, I just complicate the mechanics
+                    LOL.
                   </p>
-
-                  <p
-                    className="font italic text-md md:text-lg leading-relaxed mb-8 max-w-md"
-                    style={{ color: "var(--color-secondary)" }}
-                  >
-                    I'm open to new ideas, collaborations, and opportunities.
-                  </p>
-
-                  <a
-                    href="/contact"
-                    className="group inline-flex items-center justify-between w-full max-w-sm font-accent font-medium uppercase tracking-[0.15em] text-sm px-6 py-4 transition-all duration-300"
-                    style={{
-                      backgroundColor: "var(--color-forest)",
-                      color: "#FFF9F2",
-                    }}
-                  >
-                    <span>Let's connect</span>
-
-                    <span className="text-xl transition-transform duration-300 group-hover:translate-x-1">
-                      →
-                    </span>
-                  </a>
                 </div>
               </div>
             </article>
+
+            {/* PROJECT 04 */}
+            <article
+              className="h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
+              style={{ backgroundColor: "#FFF9F2" }}
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-full">
+                {/* Project Information */}
+                <div className="flex flex-col min-w-0">
+                  <div className="flex items-center justify-between mb-10">
+                    <p
+                      className="font-body font-medium text-m tracking-[0.2em]"
+                      style={{ color: "var(--color-secondary)" }}
+                    >
+                      04
+                    </p>
+
+                    <p
+                      className="font-body text-sm tracking-[0.15em]"
+                      style={{ color: "var(--color-secondary)" }}
+                    >
+                      Jun 2025
+                    </p>
+                  </div>
+
+                  <h3
+                    className="font-accent text-3xl md:text-4xl uppercase mb-5"
+                    style={{ color: "var(--color-forest)" }}
+                  >
+                    The Remnants of Isa
+                  </h3>
+
+                  <p
+                    className="text-base leading-relaxed"
+                    style={{ color: "var(--color-secondary)" }}
+                  >
+                    A top-down narrative exploration game about a woman in her
+                    mid-twenties returning to her old home after learning about
+                    her early-onset Alzheimer's disease, hoping to preserve the
+                    memories that are slowly slipping away.
+                  </p>
+
+                  <p
+                    className="font-body italic text-sm md:text-base mt-auto"
+                    style={{ color: "var(--color-forest)" }}
+                  >
+                    Godot
+                  </p>
+                </div>
+
+                {/* Personal Remark */}
+                <div
+                  className="lg:border-l lg:pl-8 flex items-start"
+                  style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
+                >
+                  <p
+                    className="font-body italic text-sm md:text-base leading-relaxed"
+                    style={{ color: "var(--color-forest)" }}
+                  >
+                    I wasn't able to upload this before the file got corrupted.
+                    But I'm really proud of this game. It may not be everyone's
+                    cup of tea, but it was definitely one that suited mine.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            {/* ==================== HIDDEN PROJECTS ==================== */}
+            <div
+              className={`md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6 overflow-hidden transition-all duration-700 ease-in-out ${
+                showMoreProjects
+                  ? "max-h-[1600px] opacity-100"
+                  : "max-h-0 opacity-0"
+              }`}
+            >
+              {/* ==================== PROJECT 05 ==================== */}
+              <article
+                className="h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
+                style={{ backgroundColor: "#FFF9F2" }}
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-full">
+                  {/* Project Information */}
+                  <div className="flex flex-col min-w-0">
+                    <div className="flex items-center justify-between mb-10">
+                      <p
+                        className="font-body font-medium text-m tracking-[0.2em]"
+                        style={{ color: "var(--color-secondary)" }}
+                      >
+                        05
+                      </p>
+
+                      <p
+                        className="font-body text-sm tracking-[0.15em]"
+                        style={{ color: "var(--color-secondary)" }}
+                      >
+                        Aug 2025
+                      </p>
+                    </div>
+
+                    <h3
+                      className="font-accent text-3xl md:text-4xl uppercase mb-5"
+                      style={{ color: "var(--color-forest)" }}
+                    >
+                      Bader Metallbau Philippines Enterprise, Inc.
+                    </h3>
+
+                    <p
+                      className="text-base leading-relaxed"
+                      style={{ color: "var(--color-secondary)" }}
+                    >
+                      A company website developed during our OJT.
+                    </p>
+
+                    <div className="mt-auto flex items-center justify-between gap-4">
+                      <p
+                        className="font-body italic text-sm md:text-base"
+                        style={{ color: "var(--color-forest)" }}
+                      >
+                        React · Vite · Tailwind CSS
+                      </p>
+
+                      <a
+                        href="https://github.com/rhondeldi/bader-metallbau-ph"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-body text-sm transition-opacity duration-300 hover:opacity-60"
+                        style={{ color: "var(--color-forest)" }}
+                      >
+                        View repository ↗
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Personal Remark */}
+                  <div
+                    className="lg:border-l lg:pl-8 flex items-start"
+                    style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
+                  >
+                    <p
+                      className="font-body italic text-sm md:text-base leading-relaxed"
+                      style={{ color: "var(--color-forest)" }}
+                    >
+                      One of the projects where I got to work with React and
+                      Vite, while actually experiencing what it's like to
+                      collaborate through GitHub.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              {/* ==================== PROJECT 06 ==================== */}
+              <article
+                className="h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
+                style={{ backgroundColor: "#FFF9F2" }}
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-full">
+                  {/* Project Information */}
+                  <div className="flex flex-col min-w-0">
+                    <div className="flex items-center justify-between mb-10">
+                      <p
+                        className="font-body font-medium text-m tracking-[0.2em]"
+                        style={{ color: "var(--color-secondary)" }}
+                      >
+                        06
+                      </p>
+
+                      <p
+                        className="font-body text-sm tracking-[0.15em]"
+                        style={{ color: "var(--color-secondary)" }}
+                      >
+                        Sep 2025
+                      </p>
+                    </div>
+
+                    <h3
+                      className="font-accent text-3xl md:text-4xl uppercase mb-5"
+                      style={{ color: "var(--color-forest)" }}
+                    >
+                      Driving Affiliate Growth for Smoke Cartel
+                    </h3>
+
+                    <p
+                      className="text-base leading-relaxed"
+                      style={{ color: "var(--color-secondary)" }}
+                    >
+                      A case study analyzing affiliate performance and growth
+                      opportunities.
+                    </p>
+
+                    <div className="mt-auto flex items-center justify-between gap-4">
+                      <p
+                        className="font-body italic text-sm md:text-base"
+                        style={{ color: "var(--color-forest)" }}
+                      >
+                        Canva · Data Analysis
+                      </p>
+
+                      <a
+                        href="/smoke-cartel-case-study.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-body text-sm transition-opacity duration-300 hover:opacity-60"
+                        style={{ color: "var(--color-forest)" }}
+                      >
+                        View case study ↗
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Personal Remark */}
+                  <div
+                    className="lg:border-l lg:pl-8 flex items-start"
+                    style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
+                  >
+                    <p
+                      className="font-body italic text-sm md:text-base leading-relaxed"
+                      style={{ color: "var(--color-forest)" }}
+                    >
+                      This was a nice change of pace and made me realize I
+                      actually enjoy this side of digital work too. <br />I
+                      identified key insights, and developed the findings into a
+                      structured presentation.
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              {/* ==================== PROJECT 07 ==================== */}
+              <article
+                className="h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
+                style={{ backgroundColor: "#FFF9F2" }}
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-full">
+                  {/* Project Information */}
+                  <div className="flex flex-col min-w-0">
+                    <div className="flex items-center justify-between mb-10">
+                      <p
+                        className="font-body font-medium text-m tracking-[0.2em]"
+                        style={{ color: "var(--color-secondary)" }}
+                      >
+                        07
+                      </p>
+
+                      <p
+                        className="font-body text-sm tracking-[0.15em]"
+                        style={{ color: "var(--color-secondary)" }}
+                      >
+                        Oct 2025
+                      </p>
+                    </div>
+
+                    <h3
+                      className="font-accent text-3xl md:text-4xl uppercase mb-5"
+                      style={{ color: "var(--color-forest)" }}
+                    >
+                      Marketing Portfolio Presentation
+                    </h3>
+
+                    <p
+                      className="text-base leading-relaxed"
+                      style={{ color: "var(--color-secondary)" }}
+                    >
+                      The website you're looking at right now — a personal space
+                      to showcase my projects, skills, and the things I've
+                      learned along the way.
+                    </p>
+
+                    <div className="mt-auto flex items-center justify-between gap-4">
+                      <p
+                        className="font-body italic text-sm md:text-base"
+                        style={{ color: "var(--color-forest)" }}
+                      >
+                        Canva · Portfolio Design
+                      </p>
+
+                      <a
+                        href="/marketing-portfolio-presentation.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-body text-sm transition-opacity duration-300 hover:opacity-60"
+                        style={{ color: "var(--color-forest)" }}
+                      >
+                        View presentation ↗
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Personal Remark */}
+                  <div
+                    className="lg:border-l lg:pl-8 flex items-start"
+                    style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
+                  >
+                    <p
+                      className="font-body italic text-sm md:text-base leading-relaxed"
+                      style={{ color: "var(--color-forest)" }}
+                    >
+                      Another project that let me step outside the usual coding
+                      side of things. Turning someone's work and experience into
+                      something presentable, and easy to go through.
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              {/* ==================== PROJECT 08 ==================== */}
+              <article
+                className="h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
+                style={{ backgroundColor: "#FFF9F2" }}
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-full">
+                  {/* Project Information */}
+                  <div className="flex flex-col min-w-0">
+                    <div className="flex items-center justify-between mb-10">
+                      <p
+                        className="font-body font-medium text-m tracking-[0.2em]"
+                        style={{ color: "var(--color-secondary)" }}
+                      >
+                        08
+                      </p>
+
+                      <p
+                        className="font-body text-sm tracking-[0.15em]"
+                        style={{ color: "var(--color-secondary)" }}
+                      >
+                        Aug 2026
+                      </p>
+                    </div>
+
+                    <h3
+                      className="font-accent text-3xl md:text-4xl uppercase mb-5"
+                      style={{ color: "var(--color-forest)" }}
+                    >
+                      Personal Portfolio
+                    </h3>
+
+                    <p
+                      className="text-base leading-relaxed"
+                      style={{ color: "var(--color-secondary)" }}
+                    >
+                      The website you're looking at right now. A personal space
+                      to showcase my projects, skills, and things I've learned
+                      along the way.
+                    </p>
+
+                    <p
+                      className="font-body italic text-sm md:text-base mt-auto"
+                      style={{ color: "var(--color-forest)" }}
+                    >
+                      React · Vite · Tailwind CSS · GitHub
+                    </p>
+                  </div>
+
+                  {/* Personal Remark */}
+                  <div
+                    className="lg:border-l lg:pl-8 flex items-start"
+                    style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
+                  >
+                    <p
+                      className="font-body italic text-sm md:text-base leading-relaxed"
+                      style={{ color: "var(--color-forest)" }}
+                    >
+                      This portfolio is also a little look into where I want to
+                      go next. I'm enjoying frontend and web development, while
+                      slowly exploring the backend side and working toward
+                      full-stack.
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
           </div>
+
+          {/* View More */}
+          <div className="flex justify-center mt-12">
+            <button
+              type="button"
+              onClick={() => setShowMoreProjects(!showMoreProjects)}
+              className="group flex items-center gap-3 font-body italic text-sm tracking-[0.15em] uppercase cursor-pointer transition-opacity duration-300 hover:opacity-60"
+              style={{ color: "var(--color-forest)" }}
+            >
+              <span>
+                {showMoreProjects ? "Show less" : "View more projects"}
+              </span>
+
+              <span
+                className="text-lg transition-transform duration-500"
+                style={{
+                  transform: showMoreProjects
+                    ? "rotate(180deg)"
+                    : "rotate(0deg)",
+                }}
+              >
+                ↓
+              </span>
+            </button>
+          </div>
+
+          {/* In Progress */}
+          <article
+            className="mt-6 p-8 md:p-10 min-h-[360px] transition-transform duration-500 hover:-translate-y-1"
+            style={{ backgroundColor: "#FFF9F2" }}
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 h-full">
+              {/* In Progress */}
+              <div className="flex flex-col">
+                <div className="flex items-center justify-between mb-10">
+                  <p
+                    className="font-body font-medium text-m tracking-[0.2em]"
+                    style={{ color: "var(--color-secondary)" }}
+                  >
+                    09
+                  </p>
+                </div>
+
+                <h3
+                  className="font-accent text-4xl md:text-5xl lg:text-6xl uppercase mb-4"
+                  style={{ color: "var(--color-forest)" }}
+                >
+                  In Progress
+                </h3>
+
+                <p
+                  className="font-display italic text-2xl md:text-3xl leading-relaxed mb-6"
+                  style={{ color: "var(--color-forest)" }}
+                >
+                  More to come.
+                </p>
+
+                <p
+                  className="text-base md:text-lg leading-relaxed max-w-xl"
+                  style={{ color: "var(--color-secondary)" }}
+                >
+                  Still building, still learning, still figuring out what
+                  deserves a spot here. Hopefully, this list gets a little
+                  longer soon.
+                </p>
+              </div>
+
+              {/* Contact CTA */}
+              <div
+                className="lg:border-l lg:pl-12 flex flex-col justify-end"
+                style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
+              >
+                <p
+                  className="font-accent text-xl md:text-2xl uppercase tracking-[0.18em] mb-5"
+                  style={{ color: "var(--color-forest)" }}
+                >
+                  Want to work with me?
+                </p>
+
+                <p
+                  className="text-lg md:text-xl leading-relaxed mb-8 max-w-md"
+                  style={{ color: "var(--color-secondary)" }}
+                >
+                  I'm open to new ideas, collaborations, and opportunities.
+                </p>
+
+                <a
+                  href="/contact"
+                  className="group inline-flex items-center justify-between w-full max-w-sm font-body font-medium uppercase tracking-[0.15em] text-sm px-6 py-4 transition-all duration-300"
+                  style={{
+                    backgroundColor: "var(--color-forest)",
+                    color: "#FFF9F2",
+                  }}
+                >
+                  <span>Let's connect</span>
+
+                  <span className="text-xl transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
+                </a>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
       <Footer />
