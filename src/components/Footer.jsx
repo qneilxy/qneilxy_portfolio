@@ -151,7 +151,7 @@ function Footer() {
 
         {/* Bottom */}
         <div
-          className="font-accent mt-16 pt-6 border-t flex flex-col md:flex-row justify-between gap-3 text-sm md:text-md"
+          className="font-body mt-16 pt-6 border-t flex flex-col md:flex-row justify-between gap-3 text-sm md:text-md"
           style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
         >
           <span style={{ color: "var(--color-secondary)" }}>

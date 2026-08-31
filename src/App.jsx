@@ -59,13 +59,13 @@ function App() {
           {/* Name */}
           <a
             href="#home"
-            className="ml-6 font-display text-1xl md:text-1xl lg:text-2xl nav-name"
+            className="ml-20 font-display text-1xl md:text-1xl lg:text-2xl nav-name"
           >
             Neil Agnes Pimentel
           </a>
 
           {/* Navigation */}
-          <div className="flex items-center gap-8 mr-5">
+          <div className="flex items-center gap-8 mr-20">
             <a href="#about" className="nav-link">
               About
             </a>
@@ -122,6 +122,24 @@ function App() {
               leveraging AI as a tool to learn, create, and turn ideas into
               practical digital experiences.
             </p>
+            <div className="mt-6">
+              <div className="flex flex-wrap gap-3">
+                {["Web Development", "AI", "Data", "Digital Operations"].map(
+                  (item) => (
+                    <span
+                      key={item}
+                      className="rounded-full px-5 py-2.5 font-body text-sm md:text-base"
+                      style={{
+                        backgroundColor: "#FFF9F2",
+                        color: "var(--color-forest)",
+                      }}
+                    >
+                      {item}
+                    </span>
+                  ),
+                )}
+              </div>
+            </div>
           </div>
 
           {/* Graduation Photo */}
@@ -153,13 +171,9 @@ function App() {
             </span>
           </div>
         </div>
-
-        {/* Left Decorative Panel */}
-        <div
-          className="hidden lg:block absolute left-0 top-0 h-full w-14"
-          style={{ backgroundColor: "#003E1F", zIndex: 10 }}
-        />
       </section>
+
+      {/* About */}
       <section id="about" className="min-h-screen px-8 pt-32 pb-24">
         <div className="w-full max-w-7xl mx-auto">
           {/* Section Label */}
@@ -223,7 +237,7 @@ function App() {
           </div>
 
           {/* Direction */}
-          <div className="mt-32 pt-10 border-t">
+          <div className="mt-12 pt-10 border-t">
             <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-20">
               <p
                 className="text-sm tracking-[0.25em] uppercase"
@@ -256,6 +270,7 @@ function App() {
           </div>
         </div>
       </section>
+
       {/* Skills */}
       <section
         id="skills"
@@ -285,9 +300,15 @@ function App() {
           </h2>
 
           {/* Interactive Skills */}
-          <div className="border-t">
+          <div
+            className="border-t"
+            style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
+          >
             {/* Frontend */}
-            <div className="border-b">
+            <div
+              className="border-b"
+              style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
+            >
               <button
                 type="button"
                 onClick={() =>
@@ -344,7 +365,10 @@ function App() {
             </div>
 
             {/* Development */}
-            <div className="border-b">
+            <div
+              className="border-b"
+              style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
+            >
               <button
                 type="button"
                 onClick={() =>
@@ -403,7 +427,10 @@ function App() {
             </div>
 
             {/* Database */}
-            <div className="border-b">
+            <div
+              className="border-b"
+              style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
+            >
               <button
                 type="button"
                 onClick={() =>
@@ -460,7 +487,10 @@ function App() {
             </div>
 
             {/* Exploring */}
-            <div className="border-b">
+            <div
+              className="border-b"
+              style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
+            >
               <button
                 type="button"
                 onClick={() =>
@@ -517,7 +547,10 @@ function App() {
             </div>
 
             {/* How I Work */}
-            <div className="border-b">
+            <div
+              className="border-b"
+              style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
+            >
               <button
                 type="button"
                 onClick={() =>
@@ -1070,9 +1103,9 @@ function App() {
                       className="text-base leading-relaxed"
                       style={{ color: "var(--color-secondary)" }}
                     >
-                      The website you're looking at right now — a personal space
-                      to showcase my projects, skills, and the things I've
-                      learned along the way.
+                      A professional portfolio presentation to showcase
+                      experience, partnerships,and work in affiliate marketing
+                      and digital operations.
                     </p>
 
                     <div className="mt-auto flex items-center justify-between gap-4">
@@ -1259,7 +1292,7 @@ function App() {
                 </p>
 
                 <p
-                  className="text-lg md:text-xl leading-relaxed mb-8 max-w-md"
+                  className="text-md md:text-lg leading-relaxed mb-8 max-w-md"
                   style={{ color: "var(--color-secondary)" }}
                 >
                   I'm open to new ideas, collaborations, and opportunities.
@@ -1267,13 +1300,13 @@ function App() {
 
                 <a
                   href="/contact"
-                  className="group inline-flex items-center justify-between w-full max-w-sm font-body font-medium uppercase tracking-[0.15em] text-sm px-6 py-4 transition-all duration-300"
+                  className="group inline-flex items-center justify-between w-full max-w-sm font-body uppercase tracking-[0.15em] text-sm px-6 py-4 transition-all duration-300"
                   style={{
                     backgroundColor: "var(--color-forest)",
                     color: "#FFF9F2",
                   }}
                 >
-                  <span>Let's connect</span>
+                  <span className="font-mono">Let's connect</span>
 
                   <span className="text-xl transition-transform duration-300 group-hover:translate-x-1">
                     →
@@ -1282,6 +1315,210 @@ function App() {
               </div>
             </div>
           </article>
+        </div>
+      </section>
+
+      {/* Background */}
+      <section id="background" className="px-8 py-24">
+        <div className="w-full max-w-7xl mx-auto">
+          {/* Section Label */}
+          <p
+            className="flex items-center gap-3 text-sm tracking-[0.3em] uppercase mb-16 font-mono"
+            style={{ color: "var(--color-secondary)" }}
+          >
+            <span
+              className="inline-block w-10 h-px"
+              style={{ backgroundColor: "var(--color-secondary)" }}
+            />
+            Background
+          </p>
+
+          {/* Intro */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-16 mb-24">
+            <h2
+              className="font-display text-5xl md:text-6xl lg:text-7xl leading-tight"
+              style={{ color: "var(--color-forest)" }}
+            >
+              A few things I've picked up along the way.
+            </h2>
+
+            <div className="lg:pt-3">
+              <p
+                className="text-lg md:text-xl leading-relaxed max-w-2xl"
+                style={{ color: "var(--color-secondary)" }}
+              >
+                Not everything I've worked on fits neatly into a project or a
+                technical skill. Some are experiences, some are things I'm proud
+                to have contributed to, and some are simply worth keeping
+                around.
+              </p>
+            </div>
+          </div>
+
+          {/* Background Items */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* Resume */}
+            <div
+              className="lg:col-span-7 p-8 md:p-10 min-h-[320px] flex flex-col justify-between"
+              style={{ backgroundColor: "#FFF9F2" }}
+            >
+              <div>
+                <p
+                  className="font-body text-sm tracking-[0.2em] mb-10"
+                  style={{ color: "var(--color-secondary)" }}
+                >
+                  RESUME
+                </p>
+
+                <h3
+                  className="font-display text-4xl md:text-5xl leading-tight mb-6"
+                  style={{ color: "var(--color-forest)" }}
+                >
+                  A little more about what I've done.
+                </h3>
+
+                <p
+                  className="text-base md:text-lg leading-relaxed max-w-xl"
+                  style={{ color: "var(--color-secondary)" }}
+                >
+                  A shorter, more direct version of everything you'll find
+                  throughout this portfolio.
+                </p>
+              </div>
+
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-body text-sm mt-10 inline-flex w-fit transition-opacity duration-300 hover:opacity-60"
+                style={{ color: "var(--color-forest)" }}
+              >
+                View Resume ↗
+              </a>
+            </div>
+
+            {/* BeyondBlocks */}
+            <div
+              className="lg:col-span-5 p-8 md:p-10 min-h-[320px] flex flex-col justify-between"
+              style={{ backgroundColor: "#FFF9F2" }}
+            >
+              <div>
+                <div className="flex justify-between items-start gap-6 mb-10">
+                  <p
+                    className="font-body text-sm tracking-[0.2em]"
+                    style={{ color: "var(--color-secondary)" }}
+                  >
+                    MAY 2024
+                  </p>
+                </div>
+
+                <h3
+                  className="font-display text-3xl md:text-4xl leading-tight mb-5"
+                  style={{ color: "var(--color-forest)" }}
+                >
+                  BeyondBlocks:
+                  <br />
+                  Pioneering Pathways
+                </h3>
+
+                <p
+                  className="text-base leading-relaxed"
+                  style={{ color: "var(--color-secondary)" }}
+                >
+                  Seminar / Program
+                  <br />
+                  Junior Blockchain Education Consortium of the Philippines
+                </p>
+              </div>
+            </div>
+
+            {/* Project Dream Builders */}
+            <div
+              className="lg:col-span-5 p-8 md:p-10 min-h-[320px] flex flex-col justify-between"
+              style={{ backgroundColor: "#FFF9F2" }}
+            >
+              <div>
+                <div className="flex justify-between items-start gap-6 mb-10">
+                  <p
+                    className="font-body text-sm tracking-[0.2em]"
+                    style={{ color: "var(--color-secondary)" }}
+                  >
+                    FEB 2026
+                  </p>
+                </div>
+
+                <h3
+                  className="font-display text-3xl md:text-4xl leading-tight mb-5"
+                  style={{ color: "var(--color-forest)" }}
+                >
+                  Project Dream Builders: A Career Development Program for
+                  Future Creators
+                  <br />
+                </h3>
+
+                <p
+                  className="text-base leading-relaxed"
+                  style={{ color: "var(--color-secondary)" }}
+                >
+                  Junior Chamber International (JCI Manila)
+                </p>
+              </div>
+            </div>
+
+            {/* Publication */}
+            <div
+              className="lg:col-span-7 p-8 md:p-10 min-h-[320px] flex flex-col justify-between"
+              style={{ backgroundColor: "#FFF9F2" }}
+            >
+              <div>
+                <div className="flex justify-between items-start gap-6 mb-10">
+                  <p
+                    className="font-body text-sm tracking-[0.2em]"
+                    style={{ color: "var(--color-secondary)" }}
+                  >
+                    MAY 2026
+                  </p>
+                </div>
+
+                <h3
+                  className="font-display text-3xl md:text-4xl leading-tight mb-5"
+                  style={{ color: "var(--color-forest)" }}
+                >
+                  Certificate of Publication
+                </h3>
+
+                <p
+                  className="text-base md:text-lg leading-relaxed max-w-2xl"
+                  style={{ color: "var(--color-secondary)" }}
+                >
+                  Co-author of the digital open access book:
+                  <br />
+                  <span className="italic">
+                    Evidence-Based Perspectives on Artificial Intelligence and
+                    Emerging Digital Technologies in Education, Business, and
+                    Society.
+                  </span>
+                </p>
+
+                <p
+                  className="text-base leading-relaxed mt-4"
+                  style={{ color: "var(--color-secondary)" }}
+                >
+                  FSH-PH Publications
+                </p>
+              </div>
+
+              <a
+                href="/certificate-of-publication.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-body text-sm mt-10 inline-flex w-fit transition-opacity duration-300 hover:opacity-60"
+                style={{ color: "var(--color-forest)" }}
+              >
+                View Certificate ↗
+              </a>
+            </div>
+          </div>
         </div>
       </section>
       <Footer />
