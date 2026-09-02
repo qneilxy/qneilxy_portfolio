@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
   return (
     <footer
@@ -54,9 +56,9 @@ function Footer() {
                 Projects
               </a>
 
-              <a href="/contact" className="footer-link">
+              <Link to="/contact" className="footer-link">
                 Contact
-              </a>
+              </Link>
             </nav>
 
             {/* Contact / CTA */}
@@ -64,9 +66,9 @@ function Footer() {
               className="mt-8 pt-6 border-t"
               style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
             >
-              <a href="/contact" className="footer-link font-medium">
+              <Link to="/contact" className="footer-link font-medium">
                 Start a project →
-              </a>
+              </Link>
             </div>
 
             {/* Legal */}

@@ -1,6 +1,7 @@
 import graduationPhoto from "./assets/graduation-photo.jpg";
 import { useEffect, useRef, useState } from "react";
 import Footer from "./components/Footer";
+import { Link } from "react-router-dom";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -75,9 +76,9 @@ function App() {
             <a href="#projects" className="nav-link">
               Projects
             </a>
-            <a href="/contact" className="nav-link">
+            <Link to="/contact" className="nav-link">
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
@@ -1298,8 +1299,8 @@ function App() {
                   I'm open to new ideas, collaborations, and opportunities.
                 </p>
 
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="group inline-flex items-center justify-between w-full max-w-sm font-body uppercase tracking-[0.15em] text-sm px-6 py-4 transition-all duration-300"
                   style={{
                     backgroundColor: "var(--color-forest)",
@@ -1311,7 +1312,7 @@ function App() {
                   <span className="text-xl transition-transform duration-300 group-hover:translate-x-1">
                     →
                   </span>
-                </a>
+                </Link>
               </div>
             </div>
           </article>
