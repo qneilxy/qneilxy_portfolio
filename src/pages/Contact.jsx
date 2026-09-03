@@ -29,10 +29,10 @@ function Contact() {
 
     emailjs
       .sendForm(
-        "service_0fwfl1c",
-        "template_y3ddj9n",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        "d9SMm9Yt0DpQIkVu4",
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       )
       .then(() => {
         setStatus("success");
@@ -133,7 +133,16 @@ function Contact() {
         </div>
 
         {/* Form */}
-        <form ref={form} onSubmit={sendEmail} className="max-w-4xl">
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          onInput={() => {
+            if (status) {
+              setStatus("");
+            }
+          }}
+          className="max-w-4xl"
+        >
           {/* Name */}
           <div className="mb-10">
             <label
@@ -231,23 +240,25 @@ function Contact() {
           </div>
 
           {/* Status */}
-          {status === "success" && (
-            <p
-              className="mb-6 font-mono text-sm"
-              style={{ color: "var(--color-forest)" }}
-            >
-              Message sent successfully. Thank you for reaching out.
-            </p>
-          )}
+          <div aria-live="polite">
+            {status === "success" && (
+              <p
+                className="mb-6 font-mono text-sm"
+                style={{ color: "var(--color-forest)" }}
+              >
+                Message sent successfully. Thank you for reaching out.
+              </p>
+            )}
 
-          {status === "error" && (
-            <p
-              className="mb-6 font-mono text-sm"
-              style={{ color: "var(--color-forest)" }}
-            >
-              Something went wrong. Please try again.
-            </p>
-          )}
+            {status === "error" && (
+              <p
+                className="mb-6 font-mono text-sm"
+                style={{ color: "var(--color-forest)" }}
+              >
+                Something went wrong. Please try again.
+              </p>
+            )}
+          </div>
 
           {/* Submit */}
           <button
@@ -260,12 +271,16 @@ function Contact() {
             }}
           >
             <span className="font-mono uppercase tracking-[0.2em] text-sm">
-              {isSending ? "Sending..." : "Let's Connect"}
+              {isSending
+                ? "Sending..."
+                : status === "success"
+                  ? "Message Sent"
+                  : "Let's Connect"}
             </span>
 
             {!isSending && (
               <span className="text-xl transition-transform duration-300 group-hover:translate-x-2">
-                →
+                {status === "success" ? "✓" : "→"}
               </span>
             )}
           </button>
