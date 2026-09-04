@@ -76,13 +76,21 @@ function Footer() {
               className="mt-6 pt-6 border-t flex flex-col gap-3"
               style={{ borderColor: "rgba(0, 62, 31, 0.15)" }}
             >
-              <a href="/privacy" className="footer-link text-sm">
+              <Link
+                to="/privacy"
+                className="footer-link text-sm"
+                state={{ transition: "up" }}
+              >
                 Privacy Policy
-              </a>
+              </Link>
 
-              <a href="/terms" className="footer-link text-sm">
+              <Link
+                to="/terms"
+                className="footer-link text-sm"
+                state={{ transition: "up" }}
+              >
                 Terms & Conditions
-              </a>
+              </Link>
             </div>
           </div>
 

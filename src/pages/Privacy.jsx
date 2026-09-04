@@ -1,50 +1,72 @@
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer.jsx";
+import { useEffect, useState } from "react";
+import LegalPage from "../components/LegalPage.jsx";
 
 function Privacy() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#FFFFFF" }}>
-      {/* Navbar */}
-      <nav
-        className="sticky top-0 z-50 w-full border-b"
-        style={{
-          backgroundColor: "#FFFFFF",
-          borderColor: "rgba(0, 62, 31, 0.15)",
-        }}
-      >
-        <div className="w-full px-8 py-4 flex items-center justify-between">
-          {/* Name */}
-          <Link
-            to="/#home"
-            className="ml-20 font-display text-1xl md:text-1xl lg:text-2xl nav-name"
-          >
-            Neil Agnes Pimentel
-          </Link>
-
-          {/* Navigation */}
-          <div className="flex items-center gap-8 mr-20">
-            <Link to="/#about" className="nav-link">
-              About
-            </Link>
-
-            <Link to="/#skills" className="nav-link">
-              Skills
-            </Link>
-
-            <Link to="/#projects" className="nav-link">
-              Projects
-            </Link>
-
+    <LegalPage
+      navbar={
+        <nav
+          className="sticky top-0 z-50 w-full border-b transition-all duration-500"
+          style={{
+            backgroundColor: scrolled ? "rgba(255, 249, 242, 0.78)" : "#FFF9F2",
+            borderColor: scrolled
+              ? "rgba(0, 62, 31, 0.12)"
+              : "rgba(0, 62, 31, 0.15)",
+            backdropFilter: scrolled ? "blur(12px)" : "none",
+            WebkitBackdropFilter: scrolled ? "blur(12px)" : "none",
+          }}
+        >
+          <div className="w-full px-8 py-4 flex items-center justify-between">
+            {/* Name */}
             <Link
-              to="/contact"
-              className="nav-link"
-              style={{ color: "var(--color-forest)" }}
+              to="/#home"
+              className="ml-20 font-display text-1xl md:text-1xl lg:text-2xl nav-name"
             >
-              Contact
+              Neil Agnes Pimentel
             </Link>
-          </div>
-        </div>
-      </nav>
 
+            {/* Navigation */}
+            <div className="flex items-center gap-8 mr-20">
+              <Link to="/#about" className="nav-link">
+                About
+              </Link>
+
+              <Link to="/#skills" className="nav-link">
+                Skills
+              </Link>
+
+              <Link to="/#projects" className="nav-link">
+                Projects
+              </Link>
+
+              <Link
+                to="/contact"
+                className="nav-link"
+                style={{ color: "var(--color-forest)" }}
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
+        </nav>
+      }
+    >
       {/* Content */}
       <main className="w-full max-w-5xl mx-auto px-8 py-24">
         {/* Header */}
@@ -187,20 +209,10 @@ function Privacy() {
             </p>
           </section>
         </div>
-
-        {/* Back */}
-        <div className="mt-20">
-          <Link
-            to="/#home"
-            state={{ transition: "down" }}
-            className="inline-flex items-center gap-4 font-mono uppercase tracking-[0.2em] text-sm transition-transform duration-300 hover:-translate-x-1"
-            style={{ color: "var(--color-forest)" }}
-          >
-            ← Back to home
-          </Link>
-        </div>
       </main>
-    </div>
+
+      <Footer />
+    </LegalPage>
   );
 }
 
