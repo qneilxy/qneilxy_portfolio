@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
 import Contact from "./pages/Contact.jsx";
+import Privacy from "./pages/Privacy.jsx";
+import Terms from "./pages/Terms.jsx";
 import PageTransition from "./components/PageTransition.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 
@@ -16,6 +18,8 @@ function AnimatedRoutes() {
       <Routes location={location}>
         <Route path="/" element={<App />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
     </PageTransition>
   );
