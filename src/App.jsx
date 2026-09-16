@@ -3,22 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import Footer from "./components/Footer";
 import { Link } from "react-router-dom";
 import PageTransition from "./components/PageTransition.jsx";
+import Navbar from "./components/Navbar.jsx";
 
 function App() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   const [openSkill, setOpenSkill] = useState(null);
   const skillsRef = useRef(null);
   const [showMoreProjects, setShowMoreProjects] = useState(false);
@@ -47,50 +34,14 @@ function App() {
   return (
     <PageTransition>
       <div>
-        <nav
-          className="sticky top-0 z-50 w-full border-b transition-all duration-500"
-          style={{
-            backgroundColor: scrolled ? "rgba(255, 249, 242, 0.78)" : "#FFF9F2",
-            borderColor: scrolled
-              ? "rgba(0, 62, 31, 0.12)"
-              : "rgba(0, 62, 31, 0.15)",
-            backdropFilter: scrolled ? "blur(12px)" : "none",
-            WebkitBackdropFilter: scrolled ? "blur(12px)" : "none",
-          }}
-        >
-          <div className="w-full px-8 py-4 flex items-center justify-between">
-            {/* Name */}
-            <a
-              href="#home"
-              className="ml-20 font-display text-1xl md:text-1xl lg:text-2xl nav-name"
-            >
-              Neil Agnes Pimentel
-            </a>
-
-            {/* Navigation */}
-            <div className="flex items-center gap-8 mr-20">
-              <a href="#about" className="nav-link">
-                About
-              </a>
-              <a href="#skills" className="nav-link">
-                Skills
-              </a>
-              <a href="#projects" className="nav-link">
-                Projects
-              </a>
-              <Link to="/contact" className="nav-link">
-                Contact
-              </Link>
-            </div>
-          </div>
-        </nav>
+        <Navbar />
         {/* Hero */}
         <section id="home" className="relative min-h-screen px-8">
           <div className="max-w-7xl mx-auto min-h-screen grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-center">
             <div className="text-center lg:text-left">
               <div className="mb-6">
                 <p
-                  className="flex items-center gap-3 text-sm tracking-[0.3em] uppercase"
+                  className="hidden md:flex items-center gap-3 text-sm tracking-[0.3em] uppercase mt-8 md:mt-0"
                   style={{ color: "var(--color-secondary)" }}
                 >
                   <span
@@ -118,15 +69,15 @@ function App() {
               </h1>
 
               <p
-                className="max-w-2xl text-lg leading-relaxed mt-8"
+                className="max-w-xl text-base md:text-lg leading-relaxed mt-8 text-justify"
                 style={{ color: "var(--color-secondary)" }}
               >
                 I enjoy building for the web, exploring new technologies, and
                 leveraging AI as a tool to learn, create, and turn ideas into
                 practical digital experiences.
               </p>
-              <div className="mt-6">
-                <div className="flex flex-wrap gap-3">
+              {/* <div className="mt-6">
+                <div className="flex flex-wrap justify-center lg:justify-start gap-3">
                   {["Web Development", "AI", "Data", "Digital Operations"].map(
                     (item) => (
                       <span
@@ -142,12 +93,12 @@ function App() {
                     ),
                   )}
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Graduation Photo */}
             <div className="flex justify-center lg:translate-x-15">
-              <figure className="w-full max-w-md">
+              <figure className="w-full max-w-xs md:max-w-md">
                 <img
                   src={graduationPhoto}
                   alt="Neil Agnes graduation portrait"
@@ -177,7 +128,10 @@ function App() {
         </section>
 
         {/* About */}
-        <section id="about" className="min-h-screen px-8 pt-32 pb-24">
+        <section
+          id="about"
+          className="min-h-screen px-6 md:px-8 pt-18 md:pt-20 pb-24"
+        >
           <div className="w-full max-w-7xl mx-auto">
             {/* Section Label */}
             <p
@@ -617,7 +571,7 @@ function App() {
         </section>
 
         {/* Projects */}
-        <section id="projects" className="px-8 py-24">
+        <section id="projects" className="px-8 pt-24 pb-2 md:py-24">
           <div className="w-full max-w-7xl mx-auto">
             {/* Section Label */}
             <p
@@ -643,7 +597,7 @@ function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* ==================== PROJECT 01 ==================== */}
               <article
-                className="h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
+                className="min-h-[380px] h-auto p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
                 style={{ backgroundColor: "#FFF9F2" }}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-full">
@@ -708,7 +662,7 @@ function App() {
 
               {/* ==================== PROJECT 02 ==================== */}
               <article
-                className="h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
+                className="min-h-[380px] h-auto p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
                 style={{ backgroundColor: "#FFF9F2" }}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-full">
@@ -773,7 +727,7 @@ function App() {
 
               {/* ==================== PROJECT 03 ==================== */}
               <article
-                className="h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
+                className="min-h-[380px] h-auto p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
                 style={{ backgroundColor: "#FFF9F2" }}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-full">
@@ -811,14 +765,14 @@ function App() {
                       complicated than it needed to be.
                     </p>
 
-                    <div className="mt-auto flex items-center justify-between gap-4">
+                    <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                      {" "}
                       <p
                         className="font-body italic text-sm md:text-base"
                         style={{ color: "var(--color-forest)" }}
                       >
                         Godot
                       </p>
-
                       <a
                         href="https://qneilxy.itch.io/gluttony-and-greed"
                         target="_blank"
@@ -851,7 +805,7 @@ function App() {
 
               {/* PROJECT 04 */}
               <article
-                className="h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
+                className="min-h-[380px] h-auto p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
                 style={{ backgroundColor: "#FFF9F2" }}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-full">
@@ -920,16 +874,16 @@ function App() {
               <div
                 className={`md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6 overflow-hidden transition-all duration-700 ease-in-out ${
                   showMoreProjects
-                    ? "max-h-[1600px] opacity-100"
+                    ? "max-h-[5000px] opacity-100"
                     : "max-h-0 opacity-0"
                 }`}
               >
                 {/* ==================== PROJECT 05 ==================== */}
                 <article
-                  className="h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
+                  className="min-h-[380px] h-auto p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
                   style={{ backgroundColor: "#FFF9F2" }}
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-full">
+                  <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-auto">
                     {/* Project Information */}
                     <div className="flex flex-col min-w-0">
                       <div className="flex items-center justify-between mb-10">
@@ -962,14 +916,14 @@ function App() {
                         A company website developed during our OJT.
                       </p>
 
-                      <div className="mt-auto flex items-center justify-between gap-4">
+                      <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        {" "}
                         <p
                           className="font-body italic text-sm md:text-base"
                           style={{ color: "var(--color-forest)" }}
                         >
                           React · Vite · Tailwind CSS
                         </p>
-
                         <a
                           href="https://github.com/rhondeldi/bader-metallbau-ph"
                           target="_blank"
@@ -1000,10 +954,10 @@ function App() {
                 </article>
                 {/* ==================== PROJECT 06 ==================== */}
                 <article
-                  className="h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
+                  className="min-h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
                   style={{ backgroundColor: "#FFF9F2" }}
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-full">
+                  <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-auto">
                     {/* Project Information */}
                     <div className="flex flex-col min-w-0">
                       <div className="flex items-center justify-between mb-10">
@@ -1037,14 +991,14 @@ function App() {
                         opportunities.
                       </p>
 
-                      <div className="mt-auto flex items-center justify-between gap-4">
+                      <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        {" "}
                         <p
                           className="font-body italic text-sm md:text-base"
                           style={{ color: "var(--color-forest)" }}
                         >
                           Canva · Data Analysis
                         </p>
-
                         <a
                           href="/smoke-cartel-case-study.pdf"
                           target="_blank"
@@ -1077,10 +1031,10 @@ function App() {
 
                 {/* ==================== PROJECT 07 ==================== */}
                 <article
-                  className="h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
+                  className="min-h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
                   style={{ backgroundColor: "#FFF9F2" }}
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-full">
+                  <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-auto">
                     {/* Project Information */}
                     <div className="flex flex-col min-w-0">
                       <div className="flex items-center justify-between mb-10">
@@ -1115,14 +1069,14 @@ function App() {
                         and digital operations.
                       </p>
 
-                      <div className="mt-auto flex items-center justify-between gap-4">
+                      <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        {" "}
                         <p
                           className="font-body italic text-sm md:text-base"
                           style={{ color: "var(--color-forest)" }}
                         >
                           Canva · Portfolio Design
                         </p>
-
                         <a
                           href="/marketing-portfolio-presentation.pdf"
                           target="_blank"
@@ -1155,10 +1109,10 @@ function App() {
 
                 {/* ==================== PROJECT 08 ==================== */}
                 <article
-                  className="h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
+                  className="min-h-[380px] p-8 md:p-10 transition-transform duration-500 hover:-translate-y-1"
                   style={{ backgroundColor: "#FFF9F2" }}
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-full">
+                  <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 h-auto">
                     {/* Project Information */}
                     <div className="flex flex-col min-w-0">
                       <div className="flex items-center justify-between mb-10">
@@ -1194,7 +1148,7 @@ function App() {
                       </p>
 
                       <p
-                        className="font-body italic text-sm md:text-base mt-auto"
+                        className="font-body italic text-sm md:text-base mt-8"
                         style={{ color: "var(--color-forest)" }}
                       >
                         React · Vite · Tailwind CSS · GitHub
